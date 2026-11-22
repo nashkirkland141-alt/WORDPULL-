@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#17191d"><title>WORDPULL™</title><link rel="stylesheet" href="style.css">
+</head><body>
+<div class="site-shell">
+<header class="topbar"><a class="brand" href="#home">WORDPULL<span>™</span></a><nav><button data-page="home" class="nav-btn active">Play</button><button data-page="leaderboard" class="nav-btn">Leaderboard</button><button data-page="profile" class="nav-btn">Profile</button></nav><button id="soundToggle" class="icon-btn" aria-label="Toggle sound">🔊</button></header>
+<main>
+<section id="homePage" class="page active">
+<div class="intro"><p class="eyebrow">60 SECOND WORD BATTLE</p><h1>Pull your way<br><em>to victory.</em></h1><p class="intro-copy">Out-spell your opponent. Every valid word pulls the rope toward your side. Longer words, stronger pulls.</p><div class="home-stats"><div><strong id="homeWins">0</strong><small>WINS</small></div><div><strong id="homeRating">1000</strong><small>RATING</small></div><div><strong id="homeBest">0</strong><small>BEST SCORE</small></div></div><button id="startBtn" class="primary-btn">PLAY A MATCH <span>→</span></button><p class="demo-note">Solo practice against the WORDPULL bot · Multiplayer-ready prototype</p></div>
+<div class="game-card" id="gameCard">
+<div class="game-top"><div class="player-score"><label>YOU</label><strong id="yourScore">0</strong></div><div class="clock"><strong id="timer">1:00</strong><small>TIME</small></div><div class="opponent-score"><label>BOT</label><strong id="botScore">0</strong><span class="mascot" aria-hidden="true">🐞</span></div></div>
+<div class="rope-area"><div class="rope-track"><img class="rope-img" src="assets/rope.png" alt="rope"><div class="rope-center"></div><div id="ropeMarker" class="rope-marker">✦</div></div><div class="rope-labels"><span>YOU</span><span>BOT</span></div></div>
+<div class="word-display" id="wordDisplay">Tap letters to spell a word</div><div id="selectedWord" class="selected-word" aria-live="polite"></div>
+<div id="letterGrid" class="letter-grid"></div><div class="tile-actions"><button id="backBtn">⌫ Back</button><button id="clearBtn">Clear</button><button id="shuffleBtn">⤨ Shuffle</button></div><button id="pullBtn" class="pull-btn" disabled>Pull!</button><div class="word-feedback" id="feedback"></div>
+</div>
+<div id="resultCard" class="result-card hidden"><div class="result-rope">🪢</div><p class="eyebrow" id="resultLabel">MATCH FINISHED</p><h2 id="resultTitle">You win!</h2><p id="resultSubtitle">Nice word work.</p><div class="result-stats"><div><strong id="resultYourScore">0</strong><small>YOUR POINTS</small></div><div><strong id="resultBotScore">0</strong><small>BOT POINTS</small></div><div><strong id="resultRating">+0</strong><small>RATING</small></div></div><button id="againBtn" class="primary-btn">PLAY AGAIN →</button><button id="resultLeaderboard" class="secondary-btn">Today's leaderboard</button><div class="round-words"><strong>Your words</strong><p id="wordsUsed">No words submitted</p></div></div>
+</section>
+<section id="leaderboardPage" class="page"><div class="page-heading"><p class="eyebrow">THE DAILY PULL</p><h2>Leaderboard</h2><p>Local demo leaderboard. Real global rankings will require a server connection.</p></div><div class="leaderboard-panel"><div class="leader-head"><span>#</span><span>PLAYER / LOCATION</span><span>WORD</span><span>PTS</span></div><div id="leaderRows"></div></div></section>
+<section id="profilePage" class="page"><div class="page-heading"><p class="eyebrow">YOUR RECORD</p><h2>Player profile</h2></div><div class="profile-card"><div class="profile-avatar">🪢</div><input id="usernameInput" maxlength="16" placeholder="Choose username"><select id="stateSelect"><option value="">Choose state</option></select><button id="saveProfile" class="primary-btn">Save profile</button><div class="profile-stats"><div><strong id="profileWins">0</strong><small>WINS</small></div><div><strong id="profileLosses">0</strong><small>LOSSES</small></div><div><strong id="profileWinrate">0%</strong><small>WIN RATE</small></div><div><strong id="profileRating">1000</strong><small>RATING</small></div></div><p class="privacy-note">Location is only displayed as city/state or state capital. No precise location is collected.</p></div></section>
+</main><footer><span>WORDPULL™</span><span>Spell. Pull. Win.</span></footer></div><script src="config.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="script.js"></script></body></html>
